@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Profile • CycleFlex</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="container">
+    <nav class="navbar">
+      <a href="index.html" class="brand">CycleFlex</a>
+      <div class="nav-links">
+        <a href="products.html">Products</a>
+        <a href="cart.html">Cart</a>
+        <a href="profile.html">Profile</a>
+        <span id="navUser">Guest</span>
+        <span id="navAuth"></span>
+      </div>
+    </nav>
+
+    <div class="profile-box">
+      <h1 style="margin-bottom:14px;">My Profile</h1>
+      <p><strong>Name:</strong> <span id="profileName">-</span></p>
+      <p style="margin-bottom:16px;"><strong>Email:</strong> <span id="profileEmail">-</span></p>
+      <h2 style="margin-bottom:14px;">My Orders</h2>
+      <div id="ordersWrap"></div>
+    </div>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>
