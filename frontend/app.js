@@ -1,4 +1,4 @@
-const API_BASE = "http://localhost:5050/api";
+const API_BASE = "https://cycleflex-fullstack.onrender.com/api";
 
 function getToken() {
   return localStorage.getItem("cycleflex_token") || "";
