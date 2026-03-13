@@ -6,25 +6,111 @@
   <title>Checkout • CycleFlex</title>
   <link rel="stylesheet" href="styles.css" />
 </head>
-<body>
-  <div class="checkout-box">
-    <h1 style="margin-bottom:18px;">Checkout</h1>
-    <div id="checkoutMsg" class="message"></div>
-    <form id="checkoutForm">
-      <input id="fullName" class="input" placeholder="Full name" required />
-      <input id="phone" class="input" placeholder="Phone number" required />
-      <textarea id="address" class="input" placeholder="Address" required></textarea>
-      <input id="city" class="input" placeholder="City" required />
-      <input id="state" class="input" placeholder="State" required />
-      <input id="pincode" class="input" placeholder="Pincode" required />
-      <select id="paymentMethod" class="select">
-        <option value="COD">Cash on Delivery</option>
-        <option value="UPI">UPI</option>
-        <option value="Card">Card</option>
-      </select>
-      <button type="submit" class="btn">Place Order</button>
-    </form>
+<body class="page-dark">
+
+  <div class="bg-blur bg-blur-1"></div>
+  <div class="bg-blur bg-blur-2"></div>
+
+  <div class="container">
+    <nav class="navbar">
+      <a href="index.html" class="brand">CycleFlex</a>
+
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="products.html">Products</a>
+        <a href="cart.html">Cart</a>
+        <a href="profile.html">Profile</a>
+        <span id="navUser" class="nav-user">Guest</span>
+        <span id="navAuth"></span>
+      </div>
+    </nav>
+
+    <section class="page-header">
+      <p class="eyebrow">Secure purchase</p>
+      <h1>Checkout</h1>
+      <p class="subtext">Enter your shipping details and choose a payment method to complete your order.</p>
+    </section>
+
+    <section class="checkout-layout">
+      <div class="checkout-form-card glass-card">
+        <div class="section-head">
+          <h2>Shipping Details</h2>
+          <p class="muted">Please fill in all fields correctly.</p>
+        </div>
+
+        <div id="checkoutMsg" class="message"></div>
+
+        <form id="checkoutForm" class="checkout-form">
+          <div class="form-grid">
+            <div class="form-group full">
+              <label for="fullName">Full Name</label>
+              <input id="fullName" class="input" placeholder="Enter your full name" required />
+            </div>
+
+            <div class="form-group">
+              <label for="phone">Phone Number</label>
+              <input id="phone" class="input" placeholder="Enter phone number" required />
+            </div>
+
+            <div class="form-group">
+              <label for="city">City</label>
+              <input id="city" class="input" placeholder="Enter city" required />
+            </div>
+
+            <div class="form-group full">
+              <label for="address">Address</label>
+              <textarea id="address" class="input textarea" placeholder="Enter full address" required></textarea>
+            </div>
+
+            <div class="form-group">
+              <label for="state">State</label>
+              <input id="state" class="input" placeholder="Enter state" required />
+            </div>
+
+            <div class="form-group">
+              <label for="pincode">Pincode</label>
+              <input id="pincode" class="input" placeholder="Enter pincode" required />
+            </div>
+
+            <div class="form-group full">
+              <label for="paymentMethod">Payment Method</label>
+              <select id="paymentMethod" class="select">
+                <option value="COD">Cash on Delivery</option>
+                <option value="UPI">UPI</option>
+                <option value="Card">Card</option>
+              </select>
+            </div>
+          </div>
+
+          <button type="submit" class="btn btn-full">Place Order</button>
+        </form>
+      </div>
+
+      <aside class="checkout-summary glass-card">
+        <h2>Why CycleFlex?</h2>
+
+        <div class="feature-box">
+          <h3>Performance Fit</h3>
+          <p class="muted">Designed for long rides with comfort, stretch, and breathability.</p>
+        </div>
+
+        <div class="feature-box">
+          <h3>Secure Checkout</h3>
+          <p class="muted">Simple and safe ordering experience for every customer.</p>
+        </div>
+
+        <div class="feature-box">
+          <h3>Fast Delivery</h3>
+          <p class="muted">Quick dispatch and reliable shipping across India.</p>
+        </div>
+      </aside>
+    </section>
+
+    <footer class="footer">
+      CycleFlex © 2026 • Premium Cycling Wear
+    </footer>
   </div>
+
   <script src="app.js"></script>
 </body>
 </html>
