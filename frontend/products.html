@@ -6,27 +6,52 @@
   <title>Products • CycleFlex</title>
   <link rel="stylesheet" href="styles.css" />
 </head>
-<body>
+<body class="page-dark">
+
+  <div class="bg-blur bg-blur-1"></div>
+  <div class="bg-blur bg-blur-2"></div>
+
   <div class="container">
     <nav class="navbar">
       <a href="index.html" class="brand">CycleFlex</a>
+
       <div class="nav-links">
-        <a href="products.html">Products</a>
+        <a href="index.html">Home</a>
+        <a href="products.html" class="active">Products</a>
         <a href="cart.html">Cart</a>
         <a href="profile.html">Profile</a>
-        <span id="navUser">Guest</span>
+        <span id="navUser" class="nav-user">Guest</span>
         <span id="navAuth"></span>
       </div>
     </nav>
 
-    <section class="hero" style="padding-bottom:20px;">
+    <section class="page-header">
+      <p class="eyebrow">Premium collection</p>
       <h1>Our Products</h1>
-      <p>Choose your size and add your favorite shorts to cart.</p>
+      <p class="subtext">
+        Choose your perfect fit and explore premium cycling shorts designed for comfort,
+        performance, and style.
+      </p>
     </section>
 
-    <div id="productGrid" class="grid"></div>
-    <div class="footer">CycleFlex © 2026</div>
+    <section class="products-toolbar glass-card">
+      <div>
+        <h2>CycleFlex Collection</h2>
+        <p class="muted">High-performance cycling wear for everyday riders.</p>
+      </div>
+
+      <a href="cart.html" class="btn btn-outline">View Cart</a>
+    </section>
+
+    <section id="productGrid" class="product-grid">
+      <p class="muted">Loading products...</p>
+    </section>
+
+    <footer class="footer">
+      CycleFlex © 2026 • Premium Cycling Wear
+    </footer>
   </div>
+
   <script src="app.js"></script>
 </body>
 </html>
