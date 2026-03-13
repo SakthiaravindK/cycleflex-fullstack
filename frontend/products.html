@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Products • CycleFlex</title>
+  <title>CycleFlex Product Details</title>
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body class="page-dark">
@@ -14,7 +14,6 @@
   <div class="container">
     <nav class="navbar">
       <a href="index.html" class="brand">CycleFlex</a>
-
       <div class="nav-links">
         <a href="index.html">Home</a>
         <a href="products.html" class="active">Products</a>
@@ -25,26 +24,104 @@
       </div>
     </nav>
 
-    <section class="page-header">
-      <p class="eyebrow">Premium collection</p>
-      <h1>Our Products</h1>
-      <p class="subtext">
-        Choose your perfect fit and explore premium cycling shorts designed for comfort,
-        performance, and style.
-      </p>
+    <section class="product-detail-wrap glass-card">
+      <div class="product-detail-grid">
+
+        <div class="product-gallery">
+          <div class="main-image-box">
+            <img id="mainProductImage" src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=900&q=80" alt="CycleFlex Cycling Shorts" />
+          </div>
+
+          <div class="thumb-row">
+            <img class="thumb active-thumb" src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=500&q=80" alt="thumb1" onclick="changeMainImage(this.src, this)" />
+            <img class="thumb" src="https://images.unsplash.com/photo-1506629905607-d9c297d7d8c0?auto=format&fit=crop&w=500&q=80" alt="thumb2" onclick="changeMainImage(this.src, this)" />
+            <img class="thumb" src="https://images.unsplash.com/photo-1529139574466-a303027c1d8b?auto=format&fit=crop&w=500&q=80" alt="thumb3" onclick="changeMainImage(this.src, this)" />
+          </div>
+        </div>
+
+        <div class="product-info">
+          <p class="eyebrow">CycleFlex Women</p>
+          <h1 id="productTitle">CycleFlex Pack of 3 Cotton Cycling Shorts</h1>
+
+          <div class="rating-row">
+            <span class="rating-badge">4.2 ★</span>
+            <span class="muted">327 Ratings</span>
+          </div>
+
+          <div class="price-block">
+            <span class="sale-price" id="productPrice">₹399</span>
+            <span class="original-price">₹499</span>
+            <span class="discount-tag">20% OFF</span>
+          </div>
+
+          <p class="product-short-desc">
+            Comfortable cotton cycling shorts designed for daily wear, workouts, layering,
+            and long-hour comfort with stretch support.
+          </p>
+
+          <div class="detail-pills">
+            <span class="detail-pill">Pack of 3</span>
+            <span class="detail-pill">Cotton Blend</span>
+            <span class="detail-pill">Skinny Fit</span>
+            <span class="detail-pill">Cycling Shorts</span>
+          </div>
+
+          <div class="size-section">
+            <h3>Select Size</h3>
+            <div class="size-options">
+              <button class="size-btn active-size" onclick="selectSize(this)">S</button>
+              <button class="size-btn" onclick="selectSize(this)">M</button>
+              <button class="size-btn" onclick="selectSize(this)">L</button>
+              <button class="size-btn" onclick="selectSize(this)">XL</button>
+            </div>
+          </div>
+
+          <div class="qty-section">
+            <h3>Quantity</h3>
+            <div class="qty-box">
+              <button onclick="changeQty(-1)">−</button>
+              <span id="qtyValue">1</span>
+              <button onclick="changeQty(1)">+</button>
+            </div>
+          </div>
+
+          <div class="action-row">
+            <button class="btn" onclick="addCurrentProductToCart()">Add to Cart</button>
+            <button class="btn btn-outline">Buy Now</button>
+          </div>
+
+          <div class="trust-box">
+            <div class="trust-item">Free Delivery</div>
+            <div class="trust-item">Easy Returns</div>
+            <div class="trust-item">Secure Checkout</div>
+          </div>
+        </div>
+      </div>
     </section>
 
-    <section class="products-toolbar glass-card">
-      <div>
-        <h2>CycleFlex Collection</h2>
-        <p class="muted">High-performance cycling wear for everyday riders.</p>
+    <section class="product-meta-grid">
+      <div class="glass-card meta-card">
+        <h2>Product Details</h2>
+        <ul class="meta-list">
+          <li><strong>Type:</strong> Cycling Shorts</li>
+          <li><strong>Fabric:</strong> Cotton / Cotton Blend</li>
+          <li><strong>Fit:</strong> Skinny Fit</li>
+          <li><strong>Pattern:</strong> Solid</li>
+          <li><strong>Pack:</strong> 3 Shorts</li>
+          <li><strong>Use:</strong> Casual wear, gym, layering, active comfort</li>
+        </ul>
       </div>
 
-      <a href="cart.html" class="btn btn-outline">View Cart</a>
-    </section>
-
-    <section id="productGrid" class="product-grid">
-      <p class="muted">Loading products...</p>
+      <div class="glass-card meta-card">
+        <h2>Why you'll love it</h2>
+        <ul class="meta-list">
+          <li>Soft fabric feel for all-day use</li>
+          <li>Comfortable stretch for movement</li>
+          <li>Multi-pack value pricing</li>
+          <li>Simple versatile styling</li>
+          <li>Good for home, workouts, and under dresses</li>
+        </ul>
+      </div>
     </section>
 
     <footer class="footer">
@@ -53,5 +130,52 @@
   </div>
 
   <script src="app.js"></script>
+  <script>
+    let selectedSize = "S";
+    let quantity = 1;
+
+    function changeMainImage(src, el) {
+      document.getElementById("mainProductImage").src = src;
+      document.querySelectorAll(".thumb").forEach(t => t.classList.remove("active-thumb"));
+      el.classList.add("active-thumb");
+    }
+
+    function selectSize(btn) {
+      document.querySelectorAll(".size-btn").forEach(b => b.classList.remove("active-size"));
+      btn.classList.add("active-size");
+      selectedSize = btn.textContent.trim();
+    }
+
+    function changeQty(change) {
+      quantity += change;
+      if (quantity < 1) quantity = 1;
+      document.getElementById("qtyValue").textContent = quantity;
+    }
+
+    async function addCurrentProductToCart() {
+      try {
+        if (!getToken()) {
+          alert("Please login first.");
+          location.href = "login.html";
+          return;
+        }
+
+        const demoProductId = "demo-cycleflex-pack3-cotton-shorts";
+
+        await api("/cart/add", {
+          method: "POST",
+          body: JSON.stringify({
+            productId: demoProductId,
+            size: selectedSize,
+            quantity: quantity
+          })
+        });
+
+        alert("Added to cart successfully.");
+      } catch (err) {
+        alert(err.message);
+      }
+    }
+  </script>
 </body>
 </html>
