@@ -6,19 +6,69 @@
   <title>Login • CycleFlex</title>
   <link rel="stylesheet" href="styles.css" />
 </head>
-<body>
-  <div class="auth-box">
-    <h1 style="margin-bottom:18px;">Login</h1>
-    <div id="loginMsg" class="message"></div>
-    <form id="loginForm">
-      <input id="loginEmail" class="input" type="email" placeholder="Email" required />
-      <input id="loginPassword" class="input" type="password" placeholder="Password" required />
-      <button class="btn" type="submit">Login</button>
-    </form>
-    <p style="margin-top:14px;" class="muted">New user? <a href="signup.html">Create account</a></p>
-    <p style="margin-top:14px;" class="muted">Demo user: customer@cycleflex.com / Cycleflex@123</p>
-    <p class="muted">Admin: admin@cycleflex.com / Admin@123</p>
+<body class="page-dark auth-page">
+
+  <div class="bg-blur bg-blur-1"></div>
+  <div class="bg-blur bg-blur-2"></div>
+
+  <div class="container auth-container">
+    <div class="auth-layout">
+      <section class="auth-showcase">
+        <a href="index.html" class="brand auth-brand">CycleFlex</a>
+        <p class="eyebrow">Welcome back</p>
+        <h1>Ride in with style and performance.</h1>
+        <p class="auth-text">
+          Login to access your cart, place orders, and track your premium CycleFlex cycling wear.
+        </p>
+
+        <div class="auth-feature-list">
+          <div class="auth-feature glass-card">
+            <h3>Premium Ridewear</h3>
+            <p class="muted">Comfort-driven cycling shorts built for endurance and daily performance.</p>
+          </div>
+          <div class="auth-feature glass-card">
+            <h3>Fast Ordering</h3>
+            <p class="muted">Smooth shopping flow from product selection to checkout.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="auth-box glass-card">
+        <div class="auth-head">
+          <p class="eyebrow">Account access</p>
+          <h2>Login</h2>
+          <p class="muted">Enter your details to continue.</p>
+        </div>
+
+        <div id="loginMsg" class="message"></div>
+
+        <form id="loginForm" class="auth-form">
+          <div class="form-group">
+            <label for="loginEmail">Email Address</label>
+            <input id="loginEmail" class="input" type="email" placeholder="Enter your email" required />
+          </div>
+
+          <div class="form-group">
+            <label for="loginPassword">Password</label>
+            <input id="loginPassword" class="input" type="password" placeholder="Enter your password" required />
+          </div>
+
+          <button class="btn btn-full" type="submit">Login</button>
+        </form>
+
+        <div class="auth-links">
+          <p class="muted">New user? <a href="signup.html">Create account</a></p>
+        </div>
+
+        <div class="demo-box">
+          <h3>Demo Access</h3>
+          <p class="muted"><strong>User:</strong> customer@cycleflex.com / Cycleflex@123</p>
+          <p class="muted"><strong>Admin:</strong> admin@cycleflex.com / Admin@123</p>
+        </div>
+      </section>
+    </div>
   </div>
+
   <script src="app.js"></script>
 </body>
 </html>
