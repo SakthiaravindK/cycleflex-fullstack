@@ -6,31 +6,86 @@
   <title>Cart • CycleFlex</title>
   <link rel="stylesheet" href="styles.css" />
 </head>
-<body>
+<body class="page-dark">
+
+  <div class="bg-blur bg-blur-1"></div>
+  <div class="bg-blur bg-blur-2"></div>
+
   <div class="container">
     <nav class="navbar">
       <a href="index.html" class="brand">CycleFlex</a>
+
       <div class="nav-links">
+        <a href="index.html">Home</a>
         <a href="products.html">Products</a>
-        <a href="cart.html">Cart</a>
+        <a href="cart.html" class="active">Cart</a>
         <a href="profile.html">Profile</a>
-        <span id="navUser">Guest</span>
+        <span id="navUser" class="nav-user">Guest</span>
         <span id="navAuth"></span>
       </div>
     </nav>
 
-    <section class="hero" style="padding-bottom:20px;">
+    <section class="page-header">
+      <p class="eyebrow">Your shopping bag</p>
       <h1>Your Cart</h1>
+      <p class="subtext">Review your selected cycling shorts and continue to checkout.</p>
     </section>
 
-    <div id="cartWrap"></div>
-    <div class="total">Total: <span id="cartTotal">₹0</span></div>
-    <div style="margin-top:18px;">
-      <a href="checkout.html" class="btn">Proceed to Checkout</a>
-    </div>
+    <section class="cart-layout">
+      <div class="cart-panel glass-card">
+        <div class="section-head">
+          <h2>Cart Items</h2>
+        </div>
 
-    <div class="footer">CycleFlex © 2026</div>
+        <div id="cartWrap" class="cart-wrap">
+          <p class="muted">Loading cart...</p>
+        </div>
+      </div>
+
+      <aside class="summary-panel glass-card">
+        <h2>Order Summary</h2>
+
+        <div class="summary-row">
+          <span>Subtotal</span>
+          <span id="cartTotal">₹0</span>
+        </div>
+
+        <div class="summary-row">
+          <span>Delivery</span>
+          <span>Free</span>
+        </div>
+
+        <div class="summary-row total-row">
+          <span>Total</span>
+          <span id="cartTotalFinal">₹0</span>
+        </div>
+
+        <a href="checkout.html" class="btn btn-full">Proceed to Checkout</a>
+        <a href="products.html" class="btn btn-outline btn-full">Continue Shopping</a>
+      </aside>
+    </section>
+
+    <footer class="footer">
+      CycleFlex © 2026 • Premium Cycling Wear
+    </footer>
   </div>
+
   <script src="app.js"></script>
+  <script>
+    const cartTotal = document.getElementById("cartTotal");
+    const cartTotalFinal = document.getElementById("cartTotalFinal");
+
+    const syncCartTotals = () => {
+      if (cartTotal && cartTotalFinal) {
+        cartTotalFinal.textContent = cartTotal.textContent;
+      }
+    };
+
+    const observer = new MutationObserver(syncCartTotals);
+    if (cartTotal) {
+      observer.observe(cartTotal, { childList: true, subtree: true });
+      syncCartTotals();
+    }
+  </script>
 </body>
 </html>
