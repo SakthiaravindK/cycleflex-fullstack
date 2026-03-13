@@ -6,27 +6,108 @@
   <title>Profile • CycleFlex</title>
   <link rel="stylesheet" href="styles.css" />
 </head>
-<body>
+<body class="page-dark">
+
+  <div class="bg-blur bg-blur-1"></div>
+  <div class="bg-blur bg-blur-2"></div>
+
   <div class="container">
     <nav class="navbar">
       <a href="index.html" class="brand">CycleFlex</a>
+
       <div class="nav-links">
+        <a href="index.html">Home</a>
         <a href="products.html">Products</a>
         <a href="cart.html">Cart</a>
-        <a href="profile.html">Profile</a>
-        <span id="navUser">Guest</span>
+        <a href="profile.html" class="active">Profile</a>
+        <span id="navUser" class="nav-user">Guest</span>
         <span id="navAuth"></span>
       </div>
     </nav>
 
-    <div class="profile-box">
-      <h1 style="margin-bottom:14px;">My Profile</h1>
-      <p><strong>Name:</strong> <span id="profileName">-</span></p>
-      <p style="margin-bottom:16px;"><strong>Email:</strong> <span id="profileEmail">-</span></p>
-      <h2 style="margin-bottom:14px;">My Orders</h2>
-      <div id="ordersWrap"></div>
-    </div>
+    <section class="page-header">
+      <p class="eyebrow">Your account</p>
+      <h1>My Profile</h1>
+      <p class="subtext">
+        View your account details and track all your CycleFlex orders in one place.
+      </p>
+    </section>
+
+    <section class="profile-layout">
+      <div class="profile-card-main glass-card">
+        <div class="profile-top">
+          <div class="profile-avatar">CF</div>
+          <div>
+            <h2 id="profileName">-</h2>
+            <p id="profileEmail" class="muted">-</p>
+          </div>
+        </div>
+
+        <div class="profile-info-grid">
+          <div class="info-box">
+            <span class="info-label">Name</span>
+            <strong id="profileNameDuplicate">-</strong>
+          </div>
+
+          <div class="info-box">
+            <span class="info-label">Email</span>
+            <strong id="profileEmailDuplicate">-</strong>
+          </div>
+
+          <div class="info-box">
+            <span class="info-label">Membership</span>
+            <strong>CycleFlex Rider</strong>
+          </div>
+
+          <div class="info-box">
+            <span class="info-label">Status</span>
+            <strong>Active</strong>
+          </div>
+        </div>
+      </div>
+
+      <div class="orders-card glass-card">
+        <div class="section-head">
+          <h2>My Orders</h2>
+          <p class="muted">All your recent purchases will appear here.</p>
+        </div>
+
+        <div id="ordersWrap" class="orders-wrap">
+          <p class="muted">Loading orders...</p>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      CycleFlex © 2026 • Premium Cycling Wear
+    </footer>
   </div>
+
   <script src="app.js"></script>
+  <script>
+    const syncProfileData = () => {
+      const name = document.getElementById("profileName")?.textContent || "-";
+      const email = document.getElementById("profileEmail")?.textContent || "-";
+
+      const nameDuplicate = document.getElementById("profileNameDuplicate");
+      const emailDuplicate = document.getElementById("profileEmailDuplicate");
+
+      if (nameDuplicate) nameDuplicate.textContent = name;
+      if (emailDuplicate) emailDuplicate.textContent = email;
+    };
+
+    const profileNameEl = document.getElementById("profileName");
+    const profileEmailEl = document.getElementById("profileEmail");
+
+    if (profileNameEl) {
+      new MutationObserver(syncProfileData).observe(profileNameEl, { childList: true, subtree: true });
+    }
+
+    if (profileEmailEl) {
+      new MutationObserver(syncProfileData).observe(profileEmailEl, { childList: true, subtree: true });
+    }
+
+    syncProfileData();
+  </script>
 </body>
 </html>
