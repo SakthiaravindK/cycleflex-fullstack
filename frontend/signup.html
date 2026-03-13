@@ -6,18 +6,69 @@
   <title>Signup • CycleFlex</title>
   <link rel="stylesheet" href="styles.css" />
 </head>
-<body>
-  <div class="auth-box">
-    <h1 style="margin-bottom:18px;">Create Account</h1>
-    <div id="signupMsg" class="message"></div>
-    <form id="signupForm">
-      <input id="signupName" class="input" type="text" placeholder="Full name" required />
-      <input id="signupEmail" class="input" type="email" placeholder="Email" required />
-      <input id="signupPassword" class="input" type="password" placeholder="Password" required />
-      <button class="btn" type="submit">Signup</button>
-    </form>
-    <p style="margin-top:14px;" class="muted">Already have an account? <a href="login.html">Login</a></p>
+<body class="page-dark auth-page">
+
+  <div class="bg-blur bg-blur-1"></div>
+  <div class="bg-blur bg-blur-2"></div>
+
+  <div class="container auth-container">
+    <div class="auth-layout">
+      <section class="auth-showcase">
+        <a href="index.html" class="brand auth-brand">CycleFlex</a>
+        <p class="eyebrow">Join the ride</p>
+        <h1>Create your CycleFlex account.</h1>
+        <p class="auth-text">
+          Sign up to explore premium cycling shorts, save your cart, and track every order
+          from one place.
+        </p>
+
+        <div class="auth-feature-list">
+          <div class="auth-feature glass-card">
+            <h3>Premium Collection</h3>
+            <p class="muted">Discover stylish and performance-focused cycling wear built for riders.</p>
+          </div>
+          <div class="auth-feature glass-card">
+            <h3>Easy Ordering</h3>
+            <p class="muted">Create an account once and enjoy a smoother checkout experience every time.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="auth-box glass-card">
+        <div class="auth-head">
+          <p class="eyebrow">New account</p>
+          <h2>Create Account</h2>
+          <p class="muted">Fill your details to get started.</p>
+        </div>
+
+        <div id="signupMsg" class="message"></div>
+
+        <form id="signupForm" class="auth-form">
+          <div class="form-group">
+            <label for="signupName">Full Name</label>
+            <input id="signupName" class="input" type="text" placeholder="Enter your full name" required />
+          </div>
+
+          <div class="form-group">
+            <label for="signupEmail">Email Address</label>
+            <input id="signupEmail" class="input" type="email" placeholder="Enter your email" required />
+          </div>
+
+          <div class="form-group">
+            <label for="signupPassword">Password</label>
+            <input id="signupPassword" class="input" type="password" placeholder="Create a password" required />
+          </div>
+
+          <button class="btn btn-full" type="submit">Create Account</button>
+        </form>
+
+        <div class="auth-links">
+          <p class="muted">Already have an account? <a href="login.html">Login</a></p>
+        </div>
+      </section>
+    </div>
   </div>
+
   <script src="app.js"></script>
 </body>
 </html>
